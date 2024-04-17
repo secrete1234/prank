@@ -70,20 +70,18 @@ namespace prank
  
         if (CreateShortcut(shortcutPath, targetPath, arguments, description))
         {
-            std::wcout << L"Shortcut2 created successfully: " << shortcutPath << std::endl;
+            std::wcout << L"shortcut created successfully: " << shortcutPath << std::endl;
         }
         else
         {
-            std::wcerr << L"Failed to create shortcut2" << std::endl;
+            std::wcerr << L"failed to create shortcut" << std::endl;
         }
     }
     void background(){
-        // Get the handle of the desktop window
         HWND hwndDesktop = GetDesktopWindow();
 
-        // Hide all icons on the desktop
         SendMessage(hwndDesktop, LVM_SETVIEW, LV_VIEW_ICON, NULL);
-        std::wstring imagePath = L"background.png";
+        std::wstring imagePath = L"background.jpg"; // this is the background.jpg you can change it to your image
 
 
         if (SetWallpaper(imagePath)) {
